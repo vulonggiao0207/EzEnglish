@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="English" Class="EnglishLinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=English;Integrated Security=True" SettingsObjectName="English_Studying.Properties.Settings" SettingsPropertyName="EnglishConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TuVung" Member="TuVungs">
+    <Type Name="TuVung">
+      <Column Name="IDTuVung" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDTuDien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LoaiTu" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NghiaTu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HinhAnh" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ApDung" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="TuDien_TuVung" Member="TuDien" ThisKey="IDTuDien" OtherKey="IDTuDien" Type="TuDien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NguoiDung" Member="NguoiDungs">
+    <Type Name="NguoiDung">
+      <Column Name="IDNguoiDung" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MatKhau" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="NguoiDung_TuDien" Member="TuDiens" ThisKey="IDNguoiDung" OtherKey="IDNguoiDung" Type="TuDien" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TuDien" Member="TuDiens">
+    <Type Name="TuDien">
+      <Column Name="IdTuDien" Member="IDTuDien" Storage="_IdTuDien" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenTuDien" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="IDNguoiDung" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="TuDien_TuVung" Member="TuVungs" ThisKey="IDTuDien" OtherKey="IDTuDien" Type="TuVung" />
+      <Association Name="NguoiDung_TuDien" Member="NguoiDung" ThisKey="IDNguoiDung" OtherKey="IDNguoiDung" Type="NguoiDung" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

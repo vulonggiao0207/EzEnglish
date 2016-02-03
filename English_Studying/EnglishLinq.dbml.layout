@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="EnglishLinq">
+  <DataContextMoniker Name="/EnglishLinqDataContext" />
+  <nestedChildShapes>
+    <classShape Id="33f5a412-72ec-489b-a7b3-e75a566fb247" absoluteBounds="6.25, 0.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/EnglishLinqDataContext/TuVung" />
+      <nestedChildShapes>
+        <elementListCompartment Id="669fd065-55ef-4a73-868e-00f28380f0ba" absoluteBounds="6.265, 1.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9688703f-4f06-4fe9-a6b5-eca2f18c8d9e" absoluteBounds="0.75, 1.375, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/EnglishLinqDataContext/NguoiDung" />
+      <nestedChildShapes>
+        <elementListCompartment Id="56b351e9-c734-443a-9b7b-2feb77fb76b8" absoluteBounds="0.765, 1.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="389d838f-f962-400d-9457-078a5a630918" absoluteBounds="3.5, 1.375, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/EnglishLinqDataContext/TuDien" />
+      <nestedChildShapes>
+        <elementListCompartment Id="65df47d4-f339-4c80-b248-c2e76dcfd996" absoluteBounds="3.515, 1.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 2.129091796875); (6.25 : 2.129091796875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EnglishLinqDataContext/TuDien/TuDien_TuVung" />
+      <nodes>
+        <classShapeMoniker Id="389d838f-f962-400d-9457-078a5a630918" />
+        <classShapeMoniker Id="33f5a412-72ec-489b-a7b3-e75a566fb247" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.97199625651042); (3.5 : 1.97199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/EnglishLinqDataContext/NguoiDung/NguoiDung_TuDien" />
+      <nodes>
+        <classShapeMoniker Id="9688703f-4f06-4fe9-a6b5-eca2f18c8d9e" />
+        <classShapeMoniker Id="389d838f-f962-400d-9457-078a5a630918" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
